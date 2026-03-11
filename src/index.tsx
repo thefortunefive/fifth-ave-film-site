@@ -1643,7 +1643,7 @@ app.get('/', (c) => {
                 <div class="footer-logo">
                     <img src="/static/logo.png" alt="Fifth Ave Film">
                 </div>
-                <p class="footer-tagline">Where Art Deco elegance meets cinematic excellence</p>
+                <p class="footer-tagline">Where elegance meets cinematic excellence.</p>
                 <div class="social-links">
                     <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
                     <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
@@ -1674,7 +1674,7 @@ app.get('/', (c) => {
         </div>
         
         <div class="footer-bottom">
-            <p class="copyright">© 2024 Fifth Ave Film. All rights reserved.</p>
+            <p class="copyright">© 2026 Fifth Ave Film. All rights reserved.</p>
             <div class="awards">
                 <i class="fas fa-award"></i>
                 <span>Award-Winning Cinema Experience</span>
