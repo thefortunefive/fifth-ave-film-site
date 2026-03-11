@@ -1377,6 +1377,73 @@ app.get('/', (c) => {
         font-weight: 600;
       }
       
+      /* Creator Card with Headshot Layout */
+      .creator-card {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        gap: 0;
+      }
+      
+      .creator-image-wrapper {
+        flex: 0 0 280px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        background: linear-gradient(135deg, rgba(184, 134, 11, 0.08) 0%, rgba(45, 45, 45, 0.4) 100%);
+        border-right: 1px solid rgba(184, 134, 11, 0.3);
+      }
+      
+      .creator-headshot {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--gold);
+        box-shadow: 
+          0 0 0 4px var(--black-deep),
+          0 0 0 5px var(--gold-dark),
+          0 8px 30px rgba(0, 0, 0, 0.4);
+        transition: all 0.3s ease;
+      }
+      
+      .creator-headshot:hover {
+        transform: scale(1.02);
+        box-shadow: 
+          0 0 0 4px var(--black-deep),
+          0 0 0 5px var(--gold),
+          0 12px 40px rgba(184, 134, 11, 0.3);
+      }
+      
+      .creator-bio {
+        flex: 1;
+        padding: 2rem;
+      }
+      
+      /* Responsive Creator Card */
+      @media (max-width: 768px) {
+        .creator-card {
+          flex-direction: column;
+        }
+        
+        .creator-image-wrapper {
+          flex: none;
+          border-right: none;
+          border-bottom: 1px solid rgba(184, 134, 11, 0.3);
+          padding: 1.5rem;
+        }
+        
+        .creator-headshot {
+          width: 160px;
+          height: 160px;
+        }
+        
+        .creator-bio {
+          padding: 1.5rem;
+        }
+      }
+      
       /* Mission Card Styling */
       .about-mission-card {
         background: linear-gradient(135deg, rgba(184, 134, 11, 0.08) 0%, rgba(45, 45, 45, 0.6) 100%);
@@ -1947,12 +2014,15 @@ app.get('/', (c) => {
         
         <!-- Section 2: Meet the Creator -->
         <div class="about-content">
-            <div class="about-card fade-in">
-                <div class="about-card-header">
-                    <i class="fas fa-user-tie about-icon"></i>
-                    <h3 class="about-card-title">Meet the Creator</h3>
+            <div class="about-card creator-card fade-in">
+                <div class="creator-image-wrapper">
+                    <img src="/static/creator-headshot.jpg" alt="Shane Caraballo - Creator of Fifth Ave Film" class="creator-headshot">
                 </div>
-                <div class="about-card-body">
+                <div class="creator-bio">
+                    <div class="about-card-header" style="padding: 0 0 1.5rem 0; border-bottom: 1px solid rgba(184, 134, 11, 0.3); margin-bottom: 1.5rem;">
+                        <i class="fas fa-user-tie about-icon"></i>
+                        <h3 class="about-card-title">Meet the Creator</h3>
+                    </div>
                     <p class="about-text"><strong>Sha Shane Caraballo</strong> is an AI consultant, creative director, and digital strategist based in Seattle, Washington. With over a decade of experience in digital marketing, content creation, and brand building, Shane has been at the forefront of AI-powered content since the technology emerged.</p>
                     <p class="about-text">After building a following of 30,000+ at <strong>@thefifthaveai</strong> — showcasing what's possible when artificial intelligence meets creative vision — Shane founded Fifth Ave Film to push AI storytelling into its next chapter: cinema.</p>
                     <p class="about-text">Trained in AI filmmaking through <strong>Curious Refuge</strong>, Shane brings together expertise in AI image generation, video production, prompt engineering, and visual storytelling to create a new kind of film experience. Every frame, every character, every scene on this site was crafted using cutting-edge AI tools including MidJourney, Kling, HeyGen, Runway, and ElevenLabs.</p>
