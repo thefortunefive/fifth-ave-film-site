@@ -1293,11 +1293,11 @@ app.get('/', (c) => {
       }
       
       .about-headline {
-        font-family: 'Cinzel Decorative', serif;
-        font-size: clamp(1.8rem, 4vw, 3rem);
-        font-weight: 400;
-        letter-spacing: 0.05em;
-        color: var(--gold);
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        color: var(--white);
         text-transform: uppercase;
       }
       
@@ -1347,10 +1347,10 @@ app.get('/', (c) => {
       }
       
       .about-card-title {
-        font-family: 'Cinzel Decorative', serif;
+        font-family: 'Playfair Display', serif;
         font-size: 1.25rem;
-        font-weight: 400;
-        color: var(--gold);
+        font-weight: 700;
+        color: var(--white);
         letter-spacing: 0.1em;
         text-transform: uppercase;
         margin: 0;
