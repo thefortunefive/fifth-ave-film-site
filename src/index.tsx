@@ -79,13 +79,13 @@ app.get('/', (c) => {
       ::-webkit-scrollbar-track { background: var(--black-deep); }
       ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 0; }
       
-      /* Art Deco Border Frame for entire page */
+      /* Art Deco Border Frame for hero section only */
       .page-frame {
-        position: fixed;
+        position: absolute;
         inset: 15px;
         border: 2px solid var(--gold);
         pointer-events: none;
-        z-index: 9999;
+        z-index: 10;
       }
       
       .page-frame::before {
@@ -95,12 +95,12 @@ app.get('/', (c) => {
         border: 1px solid rgba(201, 162, 39, 0.4);
       }
       
-      /* Art Deco Corner Decorations */
+      /* Art Deco Corner Decorations for hero section only */
       .corner-decor {
-        position: fixed;
+        position: absolute;
         width: 60px;
         height: 60px;
-        z-index: 10000;
+        z-index: 11;
         pointer-events: none;
       }
       
@@ -111,10 +111,10 @@ app.get('/', (c) => {
         background: var(--gold);
       }
       
-      .corner-tl { top: 15px; left: 15px; }
-      .corner-tr { top: 15px; right: 15px; }
-      .corner-bl { bottom: 15px; left: 15px; }
-      .corner-br { bottom: 15px; right: 15px; }
+      .corner-tl { top: 15px; left: 15px; position: absolute; }
+      .corner-tr { top: 15px; right: 15px; position: absolute; }
+      .corner-bl { bottom: 15px; left: 15px; position: absolute; }
+      .corner-br { bottom: 15px; right: 15px; position: absolute; }
       
       .corner-tl::before { top: 0; left: 0; width: 30px; height: 2px; }
       .corner-tl::after { top: 0; left: 0; width: 2px; height: 30px; }
@@ -1413,13 +1413,6 @@ app.get('/', (c) => {
     </style>
 </head>
 <body>
-    <!-- Art Deco Page Frame -->
-    <div class="page-frame"></div>
-    <div class="corner-decor corner-tl"></div>
-    <div class="corner-decor corner-tr"></div>
-    <div class="corner-decor corner-bl"></div>
-    <div class="corner-decor corner-br"></div>
-    
     <!-- Navigation -->
     <nav>
         <div class="nav-logo">
@@ -1438,6 +1431,13 @@ app.get('/', (c) => {
     
     <!-- Hero Section -->
     <section class="hero">
+        <!-- Art Deco Page Frame - contained within hero section only -->
+        <div class="page-frame"></div>
+        <div class="corner-decor corner-tl"></div>
+        <div class="corner-decor corner-tr"></div>
+        <div class="corner-decor corner-bl"></div>
+        <div class="corner-decor corner-br"></div>
+        
         <video autoplay muted loop playsinline class="hero-video" poster="https://www.genspark.ai/api/files/s/mK00w3JE?cache_control=3600">
             <source src="/static/hero-background.mp4" type="video/mp4">
         </video>
