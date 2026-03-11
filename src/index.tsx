@@ -1362,9 +1362,9 @@ app.get('/', (c) => {
       
       .about-text {
         font-family: 'Montserrat', sans-serif;
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         line-height: 1.8;
-        color: var(--cream);
+        color: var(--gray);
         margin-bottom: 1.25rem;
       }
       
