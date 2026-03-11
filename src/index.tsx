@@ -1500,8 +1500,9 @@ app.get('/', (c) => {
                 </div>
                 <span class="section-deco-line"></span>
             </div>
-            <p class="section-label">24/7 Streaming</p>
-            <h2 class="section-title">Fifth Ave TV</h2>
+            <p class="section-label">Behind the Scenes</p>
+            <h2 class="section-title">RAW STUDIO FOOTAGE</h2>
+            <p class="section-subtitle">Unfiltered clips of upcoming projects</p>
             <div class="section-divider">
                 <span class="section-divider-line"></span>
                 <span class="section-divider-center"></span>
