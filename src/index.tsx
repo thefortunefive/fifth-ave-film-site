@@ -1155,187 +1155,6 @@ app.get('/', (c) => {
       }
       
       /* ============================================
-         BEHIND THE SCENES - Film Strip Style
-         ============================================ */
-      .behind-scenes {
-        padding: 8rem 4rem;
-        background: var(--black-deep);
-      }
-      
-      .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: repeat(2, 180px);
-        gap: 0.75rem;
-        max-width: 1400px;
-        margin: 0 auto;
-      }
-      
-      .gallery-item {
-        position: relative;
-        overflow: hidden;
-        cursor: pointer;
-        border: 1px solid rgba(201, 162, 39, 0.3);
-      }
-      
-      .gallery-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        filter: sepia(20%) contrast(1.1);
-        transition: all 0.5s ease;
-      }
-      
-      .gallery-item:hover img {
-        filter: sepia(0%) contrast(1);
-        transform: scale(1.1);
-      }
-      
-      .gallery-item.large {
-        grid-column: span 2;
-        grid-row: span 2;
-      }
-      
-      .gallery-item .caption {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 1rem;
-        background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
-        opacity: 0;
-        transition: opacity 0.3s ease;
-      }
-      
-      .gallery-item:hover .caption {
-        opacity: 1;
-      }
-      
-      .caption-text {
-        font-family: 'Playfair Display', serif;
-        font-size: 0.9rem;
-        color: var(--gold);
-      }
-      
-      /* ============================================
-         CRITICS ACCLAIM
-         ============================================ */
-      .critics {
-        padding: 8rem 4rem;
-        background: var(--black);
-        position: relative;
-      }
-      
-      /* Art Deco fan pattern */
-      .critics::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 400px;
-        height: 200px;
-        background: radial-gradient(ellipse at bottom, rgba(201, 162, 39, 0.1) 0%, transparent 70%);
-        pointer-events: none;
-      }
-      
-      .testimonials-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 2.5rem;
-        max-width: 1200px;
-        margin: 0 auto;
-        position: relative;
-        z-index: 10;
-      }
-      
-      .testimonial-card {
-        background: var(--black-deep);
-        border: 1px solid var(--gold);
-        padding: 2.5rem;
-        text-align: center;
-        position: relative;
-      }
-      
-      /* Art Deco top decoration */
-      .testimonial-card::before {
-        content: '';
-        position: absolute;
-        top: -1px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 60px;
-        height: 4px;
-        background: var(--gold);
-      }
-      
-      .stars {
-        color: var(--gold);
-        font-size: 0.875rem;
-        margin-bottom: 1.5rem;
-        letter-spacing: 0.3em;
-      }
-      
-      .quote-mark {
-        font-family: 'Playfair Display', serif;
-        font-size: 3rem;
-        color: var(--gold);
-        line-height: 1;
-        margin-bottom: 0.5rem;
-        opacity: 0.5;
-      }
-      
-      .testimonial-text {
-        font-family: 'Playfair Display', serif;
-        font-size: 1.1rem;
-        font-style: italic;
-        color: rgba(255, 255, 255, 0.9);
-        line-height: 1.8;
-        margin-bottom: 2rem;
-      }
-      
-      .critic-info {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-      }
-      
-      .critic-photo {
-        width: 50px;
-        height: 50px;
-        border-radius: 0;
-        border: 2px solid var(--gold);
-        overflow: hidden;
-      }
-      
-      .critic-photo img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      
-      .critic-details {
-        text-align: left;
-      }
-      
-      .critic-name {
-        font-family: 'Playfair Display', serif;
-        font-size: 0.85rem;
-        font-weight: 600;
-        color: var(--white);
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-      }
-      
-      .critic-publication {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 0.65rem;
-        color: var(--gold);
-        letter-spacing: 0.1em;
-      }
-      
-      /* ============================================
          NEWSLETTER
          ============================================ */
       .newsletter {
@@ -1560,9 +1379,9 @@ app.get('/', (c) => {
       @media (max-width: 1024px) {
         nav { padding: 1rem; left: 15px; right: 15px; top: 15px; }
         .nav-links { display: none; }
-        .now-showing, .behind-scenes, .critics, .newsletter { padding: 5rem 2rem; }
+        .now-showing, .newsletter { padding: 5rem 2rem; }
         .footer-content { grid-template-columns: 1fr 1fr; }
-        .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+
         .page-frame { inset: 10px; }
       }
       
@@ -1572,8 +1391,7 @@ app.get('/', (c) => {
         .footer-brand { align-items: center; }
         .social-links { justify-content: center; }
         .footer-bottom { flex-direction: column; gap: 1rem; }
-        .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 150px); }
-        .gallery-item.large { grid-column: span 2; grid-row: span 1; }
+
         /* Hero responsive handled by clamp() */
         .page-frame { display: none; }
         .corner-decor { display: none; }
@@ -1611,8 +1429,6 @@ app.get('/', (c) => {
         <div class="nav-links">
             <a href="#portfolio">Portfolio</a>
             <a href="#films">Films</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#reviews">Reviews</a>
         </div>
         
         <button class="mobile-menu-btn">
@@ -1790,142 +1606,6 @@ app.get('/', (c) => {
         </div>
     </section>
     
-    <!-- Behind The Scenes Section -->
-    <section id="gallery" class="behind-scenes">
-        <div class="section-header fade-in">
-            <div class="section-deco">
-                <span class="section-deco-line"></span>
-                <div class="section-deco-diamond">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <span class="section-deco-line"></span>
-            </div>
-            <p class="section-label">Exclusive Access</p>
-            <h2 class="section-title">Behind The Scenes</h2>
-            <div class="section-divider">
-                <span class="section-divider-line"></span>
-                <span class="section-divider-center"></span>
-                <span class="section-divider-line"></span>
-            </div>
-        </div>
-        
-        <div class="gallery-grid fade-in">
-            <div class="gallery-item large">
-                <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&h=800&fit=crop" alt="Behind the scenes">
-                <div class="caption">
-                    <p class="caption-text">The Director's Vision</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1524712245354-2c4e5e7121c0?w=400&h=400&fit=crop" alt="Behind the scenes">
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?w=400&h=400&fit=crop" alt="Behind the scenes">
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1505775561242-727b7fba20f0?w=400&h=400&fit=crop" alt="Behind the scenes">
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=400&h=400&fit=crop" alt="Behind the scenes">
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=400&h=400&fit=crop" alt="Behind the scenes">
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=400&h=400&fit=crop" alt="Behind the scenes">
-            </div>
-        </div>
-    </section>
-    
-    <!-- Critics Acclaim Section -->
-    <section id="reviews" class="critics">
-        <div class="section-header fade-in">
-            <div class="section-deco">
-                <span class="section-deco-line"></span>
-                <div class="section-deco-diamond">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <span class="section-deco-line"></span>
-            </div>
-            <p class="section-label">Praise & Recognition</p>
-            <h2 class="section-title">Critics' Acclaim</h2>
-            <div class="section-divider">
-                <span class="section-divider-line"></span>
-                <span class="section-divider-center"></span>
-                <span class="section-divider-line"></span>
-            </div>
-        </div>
-        
-        <div class="testimonials-grid fade-in">
-            <div class="testimonial-card">
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="quote-mark">"</p>
-                <p class="testimonial-text">A cinematic masterpiece that redefines the boundaries of visual storytelling. Every frame is a work of art.</p>
-                <div class="critic-info">
-                    <div class="critic-photo">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="James Mitchell">
-                    </div>
-                    <div class="critic-details">
-                        <p class="critic-name">James Mitchell</p>
-                        <p class="critic-publication">The Film Chronicle</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="testimonial-card">
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="quote-mark">"</p>
-                <p class="testimonial-text">An unforgettable experience that captures the magic of cinema in its purest, most elegant form.</p>
-                <div class="critic-info">
-                    <div class="critic-photo">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" alt="Sarah Anderson">
-                    </div>
-                    <div class="critic-details">
-                        <p class="critic-name">Sarah Anderson</p>
-                        <p class="critic-publication">Cinema Weekly</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="testimonial-card">
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <p class="quote-mark">"</p>
-                <p class="testimonial-text">Breathtaking visuals meet powerful storytelling. A triumph of modern filmmaking excellence.</p>
-                <div class="critic-info">
-                    <div class="critic-photo">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" alt="David Chen">
-                    </div>
-                    <div class="critic-details">
-                        <p class="critic-name">David Chen</p>
-                        <p class="critic-publication">Reel Reviews</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
     <!-- Newsletter Section -->
     <section class="newsletter">
         <div class="newsletter-box fade-in">
@@ -1933,8 +1613,9 @@ app.get('/', (c) => {
             <h2 class="newsletter-title">Join The Premiere</h2>
             <p class="newsletter-text">Be the first to know about exclusive screenings, red carpet events, and special releases.</p>
             
-            <form class="newsletter-form">
-                <input type="email" placeholder="Enter your email" class="newsletter-input">
+            <form class="newsletter-form" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="c24f829f-9c1f-4f19-8925-31e56d3f03da">
+                <input type="email" name="email" placeholder="Enter your email" class="newsletter-input" required>
                 <button type="submit" class="btn-gold">Subscribe</button>
             </form>
         </div>
@@ -2100,7 +1781,42 @@ app.get('/', (c) => {
             carouselPosition = Math.max(carouselPosition - cardWidth * 2, 0);
             carousel.style.transform = 'translateX(-' + carouselPosition + 'px)';
         });
-        
+
+        // =============================================
+        // NEWSLETTER FORM - Web3Forms Integration
+        // =============================================
+        const newsletterForm = document.querySelector('.newsletter-form');
+        newsletterForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.textContent;
+
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    this.innerHTML = '<div class="success-message"><i class="fas fa-check-circle"></i><p>Thank you for subscribing! You will receive exclusive updates and premiere invitations.</p></div>';
+                    document.querySelector('.success-message').style.cssText = 'color: var(--gold); font-family: "Montserrat", sans-serif; padding: 1.5rem; text-align: center;';
+                    document.querySelector('.success-message i').style.cssText = 'font-size: 3rem; margin-bottom: 1rem; display: block;';
+                    document.querySelector('.success-message p').style.cssText = 'font-size: 1rem; line-height: 1.6;';
+                } else {
+                    throw new Error('Submission failed');
+                }
+            } catch (error) {
+                submitBtn.textContent = originalBtnText;
+                submitBtn.disabled = false;
+                alert('Something went wrong. Please try again.');
+            }
+        });
+
         // =============================================
         // FIFTH AVE TV - Channel Player System
         // =============================================
