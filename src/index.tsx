@@ -943,10 +943,25 @@ app.get('/', (c) => {
         cursor: pointer;
         transition: all 0.3s ease;
       }
-      
+
       .btn-book:hover {
         background: var(--gold);
         color: var(--black);
+      }
+
+      .btn-watch-inactive {
+        width: 100%;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        padding: 0.875rem 1.5rem;
+        background: rgba(119, 119, 119, 0.1);
+        color: var(--gray);
+        border: 1px solid var(--charcoal);
+        cursor: not-allowed;
+        opacity: 0.6;
       }
       
       /* ============================================
@@ -1699,12 +1714,12 @@ app.get('/', (c) => {
                 
                 // Render Now Showing
                 const nowShowingGrid = document.getElementById('now-showing-grid');
-                nowShowingGrid.innerHTML = data.nowShowing.map(movie => 
+                nowShowingGrid.innerHTML = data.nowShowing.map(movie =>
                     '<div class="movie-card">' +
                         '<div class="movie-poster">' +
                             '<img src="' + movie.image + '" alt="' + movie.title + '">' +
                             '<div class="movie-poster-overlay">' +
-                                '<button class="btn-book">Book Now</button>' +
+                                '<button class="btn-watch-inactive" disabled>Watch</button>' +
                             '</div>' +
                         '</div>' +
                         '<div class="movie-info">' +
@@ -1714,7 +1729,7 @@ app.get('/', (c) => {
                                 '<span class="movie-rating"><i class="fas fa-star"></i> ' + movie.rating + '</span>' +
                                 '<span><i class="far fa-clock"></i> ' + movie.duration + '</span>' +
                             '</div>' +
-                            '<button class="btn-book">Book Now</button>' +
+                            '<button class="btn-watch-inactive" disabled>Watch</button>' +
                         '</div>' +
                     '</div>'
                 ).join('');
