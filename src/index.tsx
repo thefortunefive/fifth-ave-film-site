@@ -1625,9 +1625,9 @@ app.get('/', (c) => {
       .footer-content {
         max-width: 1200px;
         margin: 0 auto;
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr 1fr;
-        gap: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
       }
       
       .footer-brand {
@@ -1677,38 +1677,7 @@ app.get('/', (c) => {
         color: var(--black);
       }
       
-      .footer-column h4 {
-        font-family: 'Playfair Display', serif;
-        font-size: 0.8rem;
-        font-weight: 600;
-        letter-spacing: 0.15em;
-        color: var(--gold);
-        text-transform: uppercase;
-        margin-bottom: 1.5rem;
-        padding-bottom: 0.75rem;
-        border-bottom: 1px solid rgba(201, 162, 39, 0.3);
-      }
-      
-      .footer-column ul {
-        list-style: none;
-      }
-      
-      .footer-column li {
-        margin-bottom: 0.6rem;
-      }
-      
-      .footer-column a {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 0.75rem;
-        color: var(--gray);
-        text-decoration: none;
-        transition: color 0.3s ease;
-        letter-spacing: 0.05em;
-      }
-      
-      .footer-column a:hover {
-        color: var(--gold);
-      }
+
       
       .footer-bottom {
         max-width: 1200px;
@@ -1759,14 +1728,14 @@ app.get('/', (c) => {
         nav { padding: 1rem; left: 15px; right: 15px; top: 15px; }
         .nav-links { display: none; }
         .now-showing, .newsletter { padding: 5rem 2rem; }
-        .footer-content { grid-template-columns: 1fr 1fr; }
+
 
         .page-frame { inset: 10px; }
       }
       
       @media (max-width: 768px) {
         .carousel-container { padding: 0 2rem; }
-        .footer-content { grid-template-columns: 1fr; text-align: center; }
+        .footer-content { align-items: center; text-align: center; }
         .footer-brand { align-items: center; }
         .social-links { justify-content: center; }
         .footer-bottom { flex-direction: column; gap: 1rem; }
@@ -2124,25 +2093,7 @@ app.get('/', (c) => {
                 </div>
             </div>
             
-            <div class="footer-column">
-                <h4>Films</h4>
-                <ul>
-                    <li><a href="#">Now Showing</a></li>
-                    <li><a href="#">Coming Soon</a></li>
-                    <li><a href="#">Classics</a></li>
-                    <li><a href="#">Premieres</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Press</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
+
         </div>
         
         <div class="footer-bottom">
