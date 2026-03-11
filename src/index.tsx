@@ -1626,7 +1626,7 @@ app.get('/', (c) => {
         <div class="newsletter-box fade-in">
             <i class="fas fa-ticket-alt newsletter-icon"></i>
             <h2 class="newsletter-title">Join The Premiere</h2>
-            <p class="newsletter-text">Be the first to know about exclusive screenings, red carpet events, and special releases.</p>
+            <p class="newsletter-text">Be the first to know about exclusive screenings, premieres, and special releases.</p>
             
             <form class="newsletter-form" action="https://api.web3forms.com/submit" method="POST">
                 <input type="hidden" name="access_key" value="c24f829f-9c1f-4f19-8925-31e56d3f03da">
@@ -1659,16 +1659,6 @@ app.get('/', (c) => {
                     <li><a href="#">Coming Soon</a></li>
                     <li><a href="#">Classics</a></li>
                     <li><a href="#">Premieres</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h4>Events</h4>
-                <ul>
-                    <li><a href="#">Red Carpet</a></li>
-                    <li><a href="#">Private Screenings</a></li>
-                    <li><a href="#">Film Festivals</a></li>
-                    <li><a href="#">Q&A Sessions</a></li>
                 </ul>
             </div>
             
