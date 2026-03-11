@@ -454,6 +454,16 @@ app.get('/', (c) => {
         letter-spacing: 0.1em;
         color: var(--white);
         text-transform: uppercase;
+        margin-bottom: 0.5rem;
+      }
+      
+      .section-subtitle {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.9rem;
+        font-weight: 300;
+        font-style: italic;
+        letter-spacing: 0.1em;
+        color: var(--gray);
         margin-bottom: 1.5rem;
       }
       
@@ -1250,6 +1260,293 @@ app.get('/', (c) => {
       }
       
       /* ============================================
+         ABOUT SECTION
+         ============================================ */
+      .about-section {
+        padding: 8rem 0;
+        background: var(--black-deep);
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .about-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50px;
+        right: 50px;
+        bottom: 0;
+        background: 
+          linear-gradient(90deg, 
+            var(--gold) 1px, transparent 1px,
+            transparent 49px, var(--gold) 49px, var(--gold) 50px, transparent 50px
+          );
+        background-size: 50px 100%;
+        opacity: 0.03;
+        pointer-events: none;
+      }
+      
+      .about-hero {
+        text-align: center;
+        margin-bottom: 4rem;
+        padding: 0 4rem;
+      }
+      
+      .about-headline {
+        font-family: 'Cinzel Decorative', serif;
+        font-size: clamp(1.8rem, 4vw, 3rem);
+        font-weight: 400;
+        letter-spacing: 0.05em;
+        color: var(--gold);
+        text-transform: uppercase;
+      }
+      
+      .about-content {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+      }
+      
+      .about-card {
+        background: linear-gradient(135deg, rgba(184, 134, 11, 0.05) 0%, rgba(45, 45, 45, 0.5) 100%);
+        border: 1px solid var(--gold);
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .about-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, 
+          transparent 0%, 
+          var(--gold) 20%, 
+          var(--gold) 80%, 
+          transparent 100%
+        );
+      }
+      
+      .about-card-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.5rem 2rem;
+        border-bottom: 1px solid rgba(184, 134, 11, 0.3);
+        background: rgba(184, 134, 11, 0.05);
+      }
+      
+      .about-icon {
+        font-size: 1.5rem;
+        color: var(--gold);
+      }
+      
+      .about-card-title {
+        font-family: 'Cinzel Decorative', serif;
+        font-size: 1.25rem;
+        font-weight: 400;
+        color: var(--gold);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin: 0;
+      }
+      
+      .about-card-body {
+        padding: 2rem;
+      }
+      
+      .about-text {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.95rem;
+        line-height: 1.8;
+        color: var(--cream);
+        margin-bottom: 1.25rem;
+      }
+      
+      .about-text:last-child {
+        margin-bottom: 0;
+      }
+      
+      .about-text strong {
+        color: var(--gold-light);
+        font-weight: 600;
+      }
+      
+      /* Mission Card Styling */
+      .about-mission-card {
+        background: linear-gradient(135deg, rgba(184, 134, 11, 0.08) 0%, rgba(45, 45, 45, 0.6) 100%);
+      }
+      
+      .mission-brands {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+      }
+      
+      .mission-brand {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .mission-brand-name {
+        font-family: 'Cinzel Decorative', serif;
+        font-size: 1.1rem;
+        color: var(--gold);
+        letter-spacing: 0.05em;
+        margin-bottom: 0.25rem;
+      }
+      
+      .mission-brand-desc {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.75rem;
+        color: var(--gray);
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+      }
+      
+      .mission-divider {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      
+      .mission-line {
+        width: 30px;
+        height: 1px;
+        background: var(--gold);
+      }
+      
+      .mission-plus {
+        color: var(--gold);
+        font-size: 0.8rem;
+      }
+      
+      .mission-text {
+        text-align: center;
+        font-size: 1rem;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(184, 134, 11, 0.2);
+      }
+      
+      /* Connect Section */
+      .about-connect {
+        text-align: center;
+        padding: 3rem 2rem;
+        background: linear-gradient(135deg, rgba(184, 134, 11, 0.05) 0%, rgba(45, 45, 45, 0.3) 100%);
+        border: 1px solid var(--gold);
+        position: relative;
+      }
+      
+      .about-connect::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, 
+          transparent 0%, 
+          var(--gold) 20%, 
+          var(--gold) 80%, 
+          transparent 100%
+        );
+      }
+      
+      .connect-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+      
+      .connect-links {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+      
+      .connect-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1rem 2rem;
+        background: transparent;
+        border: 1px solid var(--gold);
+        color: var(--gold);
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.85rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+      
+      .connect-btn:hover {
+        background: var(--gold);
+        color: var(--black-deep);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);
+      }
+      
+      .connect-btn i {
+        font-size: 1.1rem;
+      }
+      
+      .connect-btn-primary {
+        background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+        color: var(--black-deep);
+        border-color: var(--gold);
+      }
+      
+      .connect-btn-primary:hover {
+        background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+        box-shadow: 0 6px 20px rgba(184, 134, 11, 0.4);
+      }
+      
+      @media (max-width: 768px) {
+        .about-content {
+          padding: 0 1.5rem;
+        }
+        
+        .about-hero {
+          padding: 0 1.5rem;
+        }
+        
+        .about-card-header,
+        .about-card-body {
+          padding: 1.25rem;
+        }
+        
+        .mission-brands {
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+        
+        .mission-divider {
+          transform: rotate(90deg);
+        }
+        
+        .connect-links {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+      
+      /* ============================================
          FOOTER
          ============================================ */
       footer {
@@ -1437,6 +1734,7 @@ app.get('/', (c) => {
         <div class="nav-links">
             <a href="#portfolio">Portfolio</a>
             <a href="#films">Films</a>
+            <a href="#about">About</a>
         </div>
         
         <button class="mobile-menu-btn">
@@ -1619,6 +1917,109 @@ app.get('/', (c) => {
             <button class="carousel-nav carousel-nav-right" id="carousel-next">
                 <i class="fas fa-chevron-right"></i>
             </button>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="deco-border-top"></div>
+        
+        <!-- Section 1: Headline -->
+        <div class="about-hero">
+            <div class="section-header fade-in">
+                <div class="section-deco">
+                    <span class="section-deco-line"></span>
+                    <div class="section-deco-diamond">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span class="section-deco-line"></span>
+                </div>
+                <h2 class="section-title about-headline">The Vision Behind Fifth Ave Film</h2>
+                <div class="section-divider">
+                    <span class="section-divider-line"></span>
+                    <span class="section-divider-center"></span>
+                    <span class="section-divider-line"></span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section 2: Meet the Creator -->
+        <div class="about-content">
+            <div class="about-card fade-in">
+                <div class="about-card-header">
+                    <i class="fas fa-user-tie about-icon"></i>
+                    <h3 class="about-card-title">Meet the Creator</h3>
+                </div>
+                <div class="about-card-body">
+                    <p class="about-text"><strong>Sha Shane Caraballo</strong> is an AI consultant, creative director, and digital strategist based in Seattle, Washington. With over a decade of experience in digital marketing, content creation, and brand building, Shane has been at the forefront of AI-powered content since the technology emerged.</p>
+                    <p class="about-text">After building a following of 30,000+ at <strong>@thefifthaveai</strong> — showcasing what's possible when artificial intelligence meets creative vision — Shane founded Fifth Ave Film to push AI storytelling into its next chapter: cinema.</p>
+                    <p class="about-text">Trained in AI filmmaking through <strong>Curious Refuge</strong>, Shane brings together expertise in AI image generation, video production, prompt engineering, and visual storytelling to create a new kind of film experience. Every frame, every character, every scene on this site was crafted using cutting-edge AI tools including MidJourney, Kling, HeyGen, Runway, and ElevenLabs.</p>
+                </div>
+            </div>
+            
+            <!-- Section 3: What is Fifth Ave Film? -->
+            <div class="about-card fade-in">
+                <div class="about-card-header">
+                    <i class="fas fa-film about-icon"></i>
+                    <h3 class="about-card-title">What is Fifth Ave Film?</h3>
+                </div>
+                <div class="about-card-body">
+                    <p class="about-text"><strong>Fifth Ave Film</strong> is an AI cinema studio dedicated to producing original films, trailers, and visual content created entirely with artificial intelligence. This isn't traditional filmmaking with AI added on top — this is storytelling built from the ground up using AI as the primary creative engine.</p>
+                    <p class="about-text">What you see here is the beginning. The raw footage, the showcase reels, the film posters — these are all early stages of projects being developed into full-length AI films.</p>
+                    <p class="about-text">Fifth Ave Film exists to prove that compelling, cinematic storytelling doesn't require a Hollywood budget. It requires <strong>vision, skill, and the right tools.</strong></p>
+                </div>
+            </div>
+            
+            <!-- Section 4: Two Brands, One Mission -->
+            <div class="about-card about-mission-card fade-in">
+                <div class="about-card-header">
+                    <i class="fas fa-handshake about-icon"></i>
+                    <h3 class="about-card-title">Two Brands, One Mission</h3>
+                </div>
+                <div class="about-card-body">
+                    <div class="mission-brands">
+                        <div class="mission-brand">
+                            <span class="mission-brand-name">Fifth Ave Film</span>
+                            <span class="mission-brand-desc">The creative studio</span>
+                        </div>
+                        <div class="mission-divider">
+                            <span class="mission-line"></span>
+                            <i class="fas fa-plus mission-plus"></i>
+                            <span class="mission-line"></span>
+                        </div>
+                        <div class="mission-brand">
+                            <span class="mission-brand-name">FifthAveAI.com</span>
+                            <span class="mission-brand-desc">The consulting practice</span>
+                        </div>
+                    </div>
+                    <p class="about-text mission-text">Together they represent two sides of the same mission: <strong>demonstrating what AI can do when it's in the right hands.</strong></p>
+                    <p class="about-text">Through <strong>FifthAveAI.com</strong>, Shane helps businesses implement AI solutions, automate workflows, and build content systems that scale. Through <strong>Fifth Ave Film</strong>, he puts that same expertise on screen — creating original content that showcases the full creative potential of artificial intelligence.</p>
+                </div>
+            </div>
+            
+            <!-- Section 5: Connect -->
+            <div class="about-connect fade-in">
+                <div class="connect-header">
+                    <i class="fas fa-link about-icon"></i>
+                    <h3 class="about-card-title">Connect</h3>
+                </div>
+                <div class="connect-links">
+                    <a href="https://instagram.com/thefifthaveai" target="_blank" rel="noopener" class="connect-btn">
+                        <i class="fab fa-instagram"></i>
+                        <span>@thefifthaveai</span>
+                    </a>
+                    <a href="https://linkedin.com/in/shane-caraballo-sm" target="_blank" rel="noopener" class="connect-btn">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://fifthaveai.com" target="_blank" rel="noopener" class="connect-btn connect-btn-primary">
+                        <i class="fas fa-globe"></i>
+                        <span>FifthAveAI.com</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
     
